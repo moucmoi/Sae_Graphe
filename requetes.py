@@ -36,6 +36,10 @@ def est_proche(G,u,v,k=1):
 
 def distance_naive(G,u,v):
 
+def est_proche(G,u,v,k=1):
+  
+def distance_naive(G,u,v):
+
 def distance(G,u,v):
 
 # Q4

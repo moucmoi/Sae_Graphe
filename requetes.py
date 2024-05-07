@@ -3,7 +3,8 @@ import networkx as nx
 
 # Q1
 def json_vers_nx(chemin):
-
+    with open(chemin, "r"):
+        
 # Q2
 def collaborateurs_communs(G,u,v):
 

@@ -3,10 +3,16 @@ import networkx as nx
 
 # Q1
 def json_vers_nx(chemin):
-
+    pass
 
 # Q2
 def collaborateurs_communs(G,u,v):
+    liste=[]
+    for acteur1 in G.adj(u):
+        for acteur2 in G.adj(v):
+            if acteur1==acteur2:
+                liste.add(acteur1)
+    return liste
 
 # Q3
 def collaborateurs_proches(G,u,k):
@@ -33,17 +39,25 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
+    pass
 
 def distance_naive(G,u,v):
+    pass
 
 def distance(G,u,v):
+    pass
 
 # Q4
 def centralite(G,u):
+    pass
+
 def centre_hollywood(G):
+    pass
 
 # Q5
 def eloignement_max(G:nx.Graph):
+    pass
 
 # Bonus
 def centralite_groupe(G,S):
+    pass

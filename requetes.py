@@ -5,6 +5,7 @@ import networkx as nx
 def json_vers_nx(chemin):
     pass
 
+
 # Q2
 def collaborateurs_communs(G,u,v):
     liste=[]
@@ -39,14 +40,12 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
+
     pass
 
 def distance_naive(G,u,v):
     pass
 
-def est_proche(G,u,v,k=1):
-  
-def distance_naive(G,u,v):
 
 def distance(G,u,v):
     pass

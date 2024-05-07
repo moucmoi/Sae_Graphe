@@ -18,7 +18,6 @@ def centralite(G,u):
 def centre_hollywood(G):
 
 # Q5
-5
 def eloignement_max(G:nx.Graph):
 
 # Bonus

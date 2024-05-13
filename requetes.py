@@ -40,8 +40,7 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
-
-    pass
+     Can’t automatically merge. Don’t worry, you can still create the pul
 
 def distance_naive(G,u,v):
     pass

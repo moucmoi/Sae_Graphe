@@ -40,10 +40,15 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
-     Can’t automatically merge. Don’t worry, you can still create the pul
+     return u in collaborateurs_proches(G,v,k)
 
 def distance_naive(G,u,v):
-    pass
+    distance=1
+    assert v in G.nodes() and u in G.nodes(), "un des deux acteur n'est pas dans le graphe"
+    while True:
+        if est_proche(G,u,v,distance):
+            return distance
+        distance+=1
 
 
 def distance(G,u,v):

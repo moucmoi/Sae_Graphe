@@ -40,26 +40,50 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
+     return u in collaborateurs_proches(G,v,k)
 
-    pass
 
 def distance_naive(G,u,v):
-    pass
+    distance=1
+    assert v in G.nodes() and u in G.nodes(), "un des deux acteur n'est pas dans le graphe"
+    while True:
+        if est_proche(G,u,v,distance):
+            return distance
+        distance+=1
 
 
 def distance(G,u,v):
     pass
+    
 
 # Q4
 def centralite(G,u):
-    pass
+    max=0
+    for n in G.nodes():
+        dist=distance(G,u,n)
+        if dist>max:
+            max=dist
+    return dist
 
 def centre_hollywood(G):
-    pass
+    assert len(G.nodes())!=0
+    min=float("inf")
+    for n in G.nodes():
+        if centralite(G,n)<min:
+            min=centralite(G,n)
+            acteurm=n
+    return acteurm
+
 
 # Q5
 def eloignement_max(G:nx.Graph):
-    pass
+    max=0
+    for n in G.nodes():
+        for i in G.nodes():
+            dist=distance(G,n,i)
+            if dist>max:
+                max=dist
+    return max
 
 # Bonus
 def centralite_groupe(G,S):

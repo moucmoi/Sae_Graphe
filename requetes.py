@@ -42,6 +42,7 @@ def collaborateurs_proches(G,u,k):
 def est_proche(G,u,v,k=1):
      return u in collaborateurs_proches(G,v,k)
 
+
 def distance_naive(G,u,v):
     distance=1
     assert v in G.nodes() and u in G.nodes(), "un des deux acteur n'est pas dans le graphe"
@@ -54,8 +55,6 @@ def distance_naive(G,u,v):
 def distance(G,u,v):
     pass
     
-
-
 
 # Q4
 def centralite(G,u):

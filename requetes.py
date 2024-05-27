@@ -53,10 +53,18 @@ def distance_naive(G,u,v):
 
 def distance(G,u,v):
     pass
+    
+
+
 
 # Q4
 def centralite(G,u):
-    pass
+    max=0
+    for n in G.nodes():
+        dist=distance(G,u,n)
+        if dist>max:
+            max=dist
+    return dist
 
 def centre_hollywood(G):
     pass

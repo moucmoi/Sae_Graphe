@@ -78,7 +78,13 @@ def centre_hollywood(G):
 
 # Q5
 def eloignement_max(G:nx.Graph):
-    pass
+    max=0
+    for n in G.nodes():
+        for i in G.nodes():
+            dist=distance(G,n,i)
+            if dist>max:
+                max=dist
+    return max
 
 # Bonus
 def centralite_groupe(G,S):

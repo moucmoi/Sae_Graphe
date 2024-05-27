@@ -40,10 +40,23 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
-     return u in collaborateurs_proches(G,v,k)
+
+    """dit si oui ou non u et v sont proche d'un éloignement de k
+
+    Args:
+        G (nx.Graph): un graphe
+        u (str): un acteur
+        v (str): un acteur
+        k (int, optional): la distance de vérification. Defaults to 1.
+
+    Returns:
+        boolean: true si les deux acteur sont à une distance de k et false sinon
+    """     
+    return u in collaborateurs_proches(G,v,k)
 
 
 def distance_naive(G,u,v):
+
     distance=1
     assert v in G.nodes() and u in G.nodes(), "un des deux acteur n'est pas dans le graphe"
     while True:
@@ -58,6 +71,15 @@ def distance(G,u,v):
 
 # Q4
 def centralite(G,u):
+    """donne la plus grande distance entre un acteur et un autre
+
+    Args:
+        G (nx.Graph): un graphe
+        u (str): un acteur
+
+    Returns:
+        int: la distance la plus grande entre u et un autre acteur
+    """    
     max=0
     for n in G.nodes():
         dist=distance(G,u,n)
@@ -66,6 +88,14 @@ def centralite(G,u):
     return dist
 
 def centre_hollywood(G):
+    """donne l'acteur qui  est le plus central dans le graphe
+
+    Args:
+        G (nx.Graph): un graphe
+
+    Returns:
+        str: l'acteur le plus central
+    """    
     assert len(G.nodes())!=0
     min=float("inf")
     for n in G.nodes():
@@ -77,6 +107,14 @@ def centre_hollywood(G):
 
 # Q5
 def eloignement_max(G:nx.Graph):
+    """ fonction permettant de determiner la distance maximum dans Gc entre toute paire d’acteurs/actrices
+
+    Args:
+        G (nx.Graph): un graphe
+
+    Returns:
+        int: la distance maximal entre deux acteurs dans le graphe
+    """    
     max=0
     for n in G.nodes():
         for i in G.nodes():

@@ -39,9 +39,21 @@ def collaborateurs_proches(G,u,k):
         collaborateurs = collaborateurs.union(collaborateurs_directs)
     return collaborateurs
 
+
 def est_proche(G,u,v,k=1):
-    """dit si oui ou non u et v sont proche d'un éloignement de k"""
-    return 
+
+    """dit si oui ou non u et v sont proche d'un éloignement de k
+
+    Args:
+        G (nx.Graph): un graphe
+        u (str): un acteur
+        v (str): un acteur
+        k (int, optional): la distance de vérification. Defaults to 1.
+
+    Returns:
+        boolean: true si les deux acteur sont à une distance de k et false sinon
+    """     
+    return u in collaborateurs_proches(G,v,k)
 
 
 def distance_naive(G,u,v):

@@ -61,6 +61,7 @@ def collaborateurs_proches(G,u,k):
         collaborateurs = collaborateurs.union(collaborateurs_directs)
     return collaborateurs
 
+
 def est_proche(G,u,v,k=1):
 
     """dit si oui ou non u et v sont proche d'un éloignement de k
@@ -88,7 +89,12 @@ def distance_naive(G,u,v):
 
 
 def distance(G,u,v):
-    pass
+    distance=1
+    assert v in G.nodes() and u in G.nodes(), "un des deux acteur n'est pas dans le graphe"
+    while True:
+        pass
+
+        
     
 
 # Q4
@@ -104,7 +110,7 @@ def centralite(G,u):
     """    
     max=0
     for n in G.nodes():
-        dist=distance(G,u,n)
+        dist=distance_naive(G,u,n)
         if dist>max:
             max=dist
     return dist
@@ -140,7 +146,7 @@ def eloignement_max(G:nx.Graph):
     max=0
     for n in G.nodes():
         for i in G.nodes():
-            dist=distance(G,n,i)
+            dist=distance_naive(G,n,i)
             if dist>max:
                 max=dist
     return max

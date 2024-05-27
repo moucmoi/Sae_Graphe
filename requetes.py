@@ -40,9 +40,9 @@ def collaborateurs_proches(G,u,k):
     return collaborateurs
 
 def est_proche(G,u,v,k=1):
+
     """dit si oui ou non u et v sont proche d'un éloignement de k
 
-<<<<<<< HEAD
     Args:
         G (nx.Graph): un graphe
         u (str): un acteur
@@ -54,21 +54,9 @@ def est_proche(G,u,v,k=1):
     """     
     return u in collaborateurs_proches(G,v,k)
 
-def distance_naive(G,u,v):#O(n⁴)
-    """donne la distance entre u et v dans le graphe u
-
-    Args:
-        G (nx.Graph): un graphe
-        u (str): un acteur
-        v (str): un acteur
-
-    Returns:
-        int: la distance entre u et v
-    """    
-=======
 
 def distance_naive(G,u,v):
->>>>>>> 8b96c076f04d7851948f8c2dd764189c239719f2
+
     distance=1
     assert v in G.nodes() and u in G.nodes(), "un des deux acteur n'est pas dans le graphe"
     while True:

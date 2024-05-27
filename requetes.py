@@ -1,9 +1,31 @@
 import json
 import networkx as nx
+import matplotlib.pyplot as plt
 
 # Q1
 def json_vers_nx(chemin):
-    pass
+    G = nx.Graph()
+    with open(chemin, "r") as fic:
+        contenu = fic.read()
+        splitcontent=contenu.split("\n")
+        splitcontent=splitcontent[:-1]
+        for dictionary in splitcontent:
+            liste_acteurs=[]
+            undico = json.loads(dictionary)
+            lesacteurs = undico['cast']
+            for actor in lesacteurs:
+                if actor[:2] == "[[":
+                    liste_acteurs.append(actor[2:-2])
+                else:
+                    liste_acteurs.append(actor)
+
+            for actor1 in liste_acteurs:
+                for actor2 in liste_acteurs:
+                    if (actor1,actor2) not in G.edges:
+                        G.add_edge(actor1,actor2)
+        fic.close()
+
+    return G
 
 
 # Q2

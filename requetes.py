@@ -51,7 +51,6 @@ def collaborateurs_proches(G,u,k):
         return None
     collaborateurs = set()
     collaborateurs.add(u)
-    print(collaborateurs)
     for i in range(k):
         collaborateurs_directs = set()
         for c in collaborateurs:
@@ -154,3 +153,6 @@ def eloignement_max(G:nx.Graph):
 # Bonus
 def centralite_groupe(G,S):
     pass
+
+G=json_vers_nx("data_100.txt")
+print(G)

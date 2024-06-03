@@ -156,3 +156,4 @@ def centralite_groupe(G,S):
 
 G=json_vers_nx("data_100.txt")
 print(G)
+print(centralite(G,"David Spade"))
